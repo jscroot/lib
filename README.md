@@ -20,19 +20,19 @@ Using JSCroot assisted by chatGPT:
 
 ## CDN List
 ```txt
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/api.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/cookie.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/element.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/image.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/loading.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/mongo.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/url.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/useragent.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.1/websocket.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/api.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/cookie.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/element.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/image.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/loading.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/mongo.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/url.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/useragent.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.3/websocket.js
 ```
 ## Release Tag
 ```sh
 git tag                                 #check current version
-git tag v0.0.2                          #set tag version
+git tag v0.0.3                          #set tag version
 git push origin --tags                  #push tag version to repo
 ```
