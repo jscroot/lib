@@ -1,6 +1,6 @@
 # JSCRoot Library
 
-## Quick Use with ChatGPT
+## Quick Start with ChatGPT
 
 Using JSCroot assisted by chatGPT:
 1. Download lib from [release page](https://github.com/jscroot/lib/releases)
