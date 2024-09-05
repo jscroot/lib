@@ -6,6 +6,7 @@ export function getJSON(target_url, tokenkey, tokenvalue, responseFunction) {
     let myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
 
     let requestOptions = {
         method: 'GET',
@@ -32,6 +33,7 @@ export function postJSON(target_url, tokenkey, tokenvalue, datajson, responseFun
     var myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
 
     var raw = JSON.stringify(datajson);
 
@@ -61,6 +63,7 @@ export function deleteJSON(target_url, tokenkey, tokenvalue, datajson, responseF
     var myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
 
     var raw = JSON.stringify(datajson);
 
@@ -90,6 +93,7 @@ export function putJSON(target_url, tokenkey, tokenvalue, datajson, responseFunc
     var myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
 
     var raw = JSON.stringify(datajson);
 
@@ -115,6 +119,7 @@ export function postWithBearer(target_url,token,datajson,responseFunction){
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer "+token);
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
 
     var raw = JSON.stringify(datajson);
 
@@ -173,9 +178,9 @@ export function getDomHTML(target_url,domFunction){
 }
 
 export function getWithHeader(target_url,tokenkey,tokenvalue,responseFunction) {
-
     let myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
+    myHeaders.append("Accept", "application/json");
 
     let requestOptions = {
         method: 'GET',
@@ -210,6 +215,7 @@ export function postFile(target_url,id,formdataname,responseFunction) {
 export function postFileWithHeader(target_url,tokenkey,tokenvalue,id,formdataname,responseFunction) {
     let myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
+    myHeaders.append("Accept", "application/json");
 
     const input = document.getElementById(id);
     const file = input.files[0];
