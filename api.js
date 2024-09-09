@@ -233,3 +233,36 @@ export function postFileWithHeader(target_url,tokenkey,tokenvalue,id,formdatanam
     .then(result => responseFunction(JSON.parse(result)))
     .catch(error => console.log('error', error));
 }
+
+// function responseFunction(response) {
+//     console.log('HTTP Status:', response.status);
+//     console.log('Response Data:', response.data);
+// }
+export function postFileJSON(target_url, tokenkey, tokenvalue, id, formdataname, responseFunction) {
+    let myHeaders = new Headers();
+    myHeaders.append(tokenkey, tokenvalue);
+    myHeaders.append("Accept", "application/json");
+
+    const input = document.getElementById(id);
+    const file = input.files[0];
+    const formData = new FormData();
+    formData.append(formdataname, file);
+
+    var requestOptions = {
+        method: 'POST',
+        body: formData,
+        redirect: 'follow',
+        headers: myHeaders
+    };
+
+    fetch(target_url, requestOptions)
+    .then(response => response.text().then(data => ({
+        status: response.status,
+        data: data
+    })))
+    .then(result => responseFunction({
+        status: result.status,
+        data: JSON.parse(result.data)
+    }))
+    .catch(error => console.log('error', error));
+}

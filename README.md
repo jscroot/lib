@@ -33,6 +33,6 @@ https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/websocket.js
 ## Release Tag
 ```sh
 git tag                                 #check current version
-git tag v0.0.5                          #set tag version
+git tag v0.0.6                          #set tag version
 git push origin --tags                  #push tag version to repo
 ```
