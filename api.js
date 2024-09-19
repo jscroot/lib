@@ -266,3 +266,60 @@ export function postFileJSON(target_url, tokenkey, tokenvalue, id, formdataname,
     }))
     .catch(error => console.log('error', error));
 }
+
+//get file and download it into your browser, if not 200 then return json
+export function getFileWithHeader(target_url, tokenkey, tokenvalue, responseFunction, fileName) {
+    let myHeaders = new Headers();
+    myHeaders.append(tokenkey, tokenvalue);
+
+    let requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders
+    };
+
+    fetch(target_url, requestOptions)
+        .then(response => {
+            if (response.status === 200) {
+                // Jika status 200, download file
+                return response.blob().then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    //let base64fileurl = target_url.split('/').pop();
+                    a.download = fileName; // Nama file dari URL
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                });
+            } else {
+                // Jika status selain 200, parse sebagai JSON
+                return response.json().then(result => responseFunction(result));
+            }
+        })
+        .catch(error => console.log('error', error));
+}
+
+//get file bytes if 200, othen than return json
+export function getFileBytesWithHeader(target_url, tokenkey, tokenvalue, responseFunction) {
+    let myHeaders = new Headers();
+    myHeaders.append(tokenkey, tokenvalue);
+
+    let requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders
+    };
+
+    fetch(target_url, requestOptions)
+        .then(response => {
+            if (response.status === 200) {
+                // Jika status 200, return fileBytes
+                return response.arrayBuffer();
+            } else {
+                // Jika status selain 200, parse sebagai JSON
+                return response.json().then(result => responseFunction(result));
+            }
+        })
+        .catch(error => console.log('error', error));
+}
