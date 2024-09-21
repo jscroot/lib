@@ -2,6 +2,9 @@ export function container(id){
     return document.getElementById(id);
 }
 
+// function actionfunctionname(event) {
+//     const nameAttribute = event.target.getAttribute("name");
+// }
 export function onClick(id,actionfunctionname){
     document.getElementById(id).onclick = actionfunctionname;
 }
