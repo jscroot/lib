@@ -136,10 +136,17 @@ export function addScriptInBody( src ) {
     document.body.appendChild( s );
 }
 
-export function addScriptInHead( src ) {
-    let s = document.createElement( 'script' );
-    s.setAttribute( 'src', src );
-    document.head.appendChild( s );
+//async function functionName(arg){
+//    await addScriptInHead("http...");}
+//use async await if you need load script properly
+export function addScriptInHead(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = () => resolve(); // Resolves when script is loaded
+      script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+      document.head.appendChild(script);
+    });
 }
 
 export function addCSS( href ) {
