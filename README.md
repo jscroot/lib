@@ -20,19 +20,11 @@ Using JSCroot assisted by chatGPT:
 
 ## CDN List
 ```txt
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/api.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/cookie.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/element.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/image.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/loading.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/mongo.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/url.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/useragent.js
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.0/websocket.js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.1/[choosefile].js
 ```
 ## Release Tag
 ```sh
 git tag                                 #check current version
-git tag v0.1.0                          #set tag version
+git tag v0.1.1                          #set tag version
 git push origin --tags                  #push tag version to repo
 ```
