@@ -130,11 +130,6 @@ export function renderHTML(id,urlHTML){
     document.getElementById(id).load(urlHTML);
 }
 
-export function addScriptInBody( src ) {
-    let s = document.createElement( 'script' );
-    s.setAttribute( 'src', src );
-    document.body.appendChild( s );
-}
 
 //async function functionName(arg){
 //    await addScriptInHead("http...");}
@@ -149,16 +144,14 @@ export function addScriptInHead(src) {
     });
 }
 
-export function addCSS( href ) {
-    let s = document.createElement( 'link' );
-    s.setAttribute( 'rel', 'stylesheet' );
-    s.setAttribute( 'href', href );
-    document.head.appendChild( s );
-}
-
-export function addCSSIn( href,id ) {
-    let s = document.createElement( 'link' );
-    s.setAttribute( 'rel', 'stylesheet' );
-    s.setAttribute( 'href', href );
-    document.getElementById(id).appendChild( s );
+// await addCSS("http...")
+export function addCSSInHead(href) {
+    return new Promise((resolve, reject) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.onload = () => resolve(); // Resolves when CSS is loaded
+        link.onerror = () => reject(new Error(`Failed to load stylesheet: ${href}`));
+        document.head.appendChild(link);
+    });
 }
