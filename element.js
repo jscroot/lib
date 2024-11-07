@@ -134,7 +134,7 @@ export function renderHTML(id,urlHTML){
 //async function functionName(arg){
 //    await addScriptInHead("http...");}
 //use async await if you need load script properly
-export function addScriptInHead(src) {
+export function addJSInHead(src) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
       script.src = src;
