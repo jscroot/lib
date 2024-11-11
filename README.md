@@ -20,11 +20,11 @@ Using JSCroot assisted by chatGPT:
 
 ## CDN List
 ```txt
-https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.5/[choosefile].js
+https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.6/[choosefile].js
 ```
 ## Release Tag
 ```sh
 git tag                                 #check current version
-git tag v0.1.5                          #set tag version
+git tag v0.1.6                          #set tag version
 git push origin --tags                  #push tag version to repo
 ```

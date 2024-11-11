@@ -155,3 +155,16 @@ export function addCSSInHead(href) {
         document.head.appendChild(link);
     });
 }
+
+export function addJS( src ) {
+    let s = document.createElement( 'script' );
+    s.setAttribute( 'src', src );
+    document.head.appendChild( s );
+}
+
+export function addCSS( href ) {
+    let s = document.createElement( 'link' );
+    s.setAttribute( 'rel', 'stylesheet' );
+    s.setAttribute( 'href', href );
+    document.head.appendChild( s );
+}
