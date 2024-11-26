@@ -126,9 +126,31 @@ export function enableInput(id) {
     Input.disabled = false;
 }
 
-export function renderHTML(id,urlHTML){
-    document.getElementById(id).load(urlHTML);
+export function renderHTML(id, urlHTML) {
+    // Ambil elemen berdasarkan ID
+    const element = document.getElementById(id);
+    
+    if (!element) {
+        console.error(`Element with ID "${id}" not found.`);
+        return;
+    }
+
+    // Ambil konten HTML dari URL
+    fetch(urlHTML)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text(); // Ambil teks HTML dari response
+        })
+        .then(html => {
+            element.innerHTML = html; // Render HTML ke dalam elemen
+        })
+        .catch(error => {
+            console.error('Error loading HTML:', error);
+        });
 }
+
 
 
 //async function functionName(arg){
