@@ -126,7 +126,8 @@ export function enableInput(id) {
     Input.disabled = false;
 }
 
-export function renderHTML(id, urlHTML) {
+//renderHTML('content', 'content/home.html', afterContentLoadedFunction);
+export function renderHTML(id, urlHTML, callback = null) {
     // Ambil elemen berdasarkan ID
     const element = document.getElementById(id);
     
@@ -144,13 +145,17 @@ export function renderHTML(id, urlHTML) {
             return response.text(); // Ambil teks HTML dari response
         })
         .then(html => {
-            element.innerHTML = html; // Render HTML ke dalam elemen
+            element.innerHTML = html; // Render HTML ke elemen
+
+            // Jika callback ada, jalankan setelah konten dimuat
+            if (callback && typeof callback === 'function') {
+                callback();
+            }
         })
         .catch(error => {
             console.error('Error loading HTML:', error);
         });
 }
-
 
 
 //async function functionName(arg){
