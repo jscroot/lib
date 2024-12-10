@@ -183,6 +183,26 @@ export function addCSSInHead(href) {
     });
 }
 
+export function isCSSLoaded(href) {
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (let link of links) {
+        if (link.href.includes(href)) {
+            return true; // CSS file ditemukan
+        }
+    }
+    return false; // CSS file tidak ditemukan
+}
+
+export function isJSLoaded(src) {
+    const scripts = document.querySelectorAll('script');
+    for (let script of scripts) {
+        if (script.src.includes(src)) {
+            return true; // JavaScript file ditemukan
+        }
+    }
+    return false; // JavaScript file tidak ditemukan
+}
+
 export function addJS( src ) {
     let s = document.createElement( 'script' );
     s.setAttribute( 'src', src );
