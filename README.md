@@ -6,15 +6,28 @@ Start with calling ES Module Javascript from html file
 ```
 Begin javascript with import JSCroot Component
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.1.9/croot.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.1.9/croot.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.9/cookie.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.9/url.js";
 
 if (getCookie("login")===""){
     redirect("/");
 }
 ```
 
+## cookie.js
+
+### getCookie(cname)
+```js
+if (getCookie("login")===""){
+    redirect("/");
+}
+```
+
 ## validate.js
+
+Fungsi validasi inputan user
+
+###  formatRupiah(input)
 Untuk mendapatkan format harga dalam rupiah pada inputan
 ```js
 onInput('harga', formatRupiah);//element objek harga ikut jadi argumen fungsi formatrupiah
