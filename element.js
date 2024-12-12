@@ -40,6 +40,11 @@ export function getValue(id){
     return document.getElementById(id).value;
 }
 
+// Fungsi untuk mendapatkan nilai dari sebuah atribut dalam tag
+export function getAttributeValue(id,attribute) {
+    return document.getElementById(id).getAttribute(attribute);
+}
+
 //get radio button value using by name not id
 export function getValueRadio(name){
     const RadioButtons = document.getElementsByName(name);

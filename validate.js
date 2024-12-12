@@ -14,3 +14,25 @@ export function validatePhoneNumber(input) {
         input.value = '62'+input.value.substr(1);
     }
 }
+
+// const harga=getAttributeValue('id','data-value');
+export function formatRupiah(input) {
+    let angka = input.value.replace(/[^,\d]/g, '').toString();
+    let split = angka.split(',');
+    let sisa = split[0].length % 3;
+    let rupiah = split[0].substr(0, sisa);
+    let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    if (ribuan) {
+    let separator = sisa ? '.' : '';
+    rupiah += separator + ribuan.join('.');
+    }
+
+    rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+
+    // Simpan nilai asli tanpa format di atribut data
+    input.setAttribute('data-value', angka);
+
+    // Tampilkan nilai yang diformat
+    input.value = 'Rp. ' + rupiah;
+}

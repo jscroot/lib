@@ -14,6 +14,13 @@ if (getCookie("login")===""){
 }
 ```
 
+## validate.js
+Untuk mendapatkan format harga dalam rupiah pada inputan
+```js
+onInput('harga', formatRupiah);//element objek harga ikut jadi argumen fungsi formatrupiah
+const harga=getAttributeValue('id','data-value');
+```
+
 ## Quick Start with ChatGPT
 
 Using JSCroot assisted by chatGPT:
