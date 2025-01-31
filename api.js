@@ -1,10 +1,11 @@
-// function responseFunction(response) {
-//     console.log('HTTP Status:', response.status);
-//     console.log('Response Data:', response.data);
-// }
-export function getJSON(target_url, tokenkey, tokenvalue, responseFunction) {
+export function getJSON(target_url, responseFunction, tokenkey = null, tokenvalue = null) {
     let myHeaders = new Headers();
-    myHeaders.append(tokenkey, tokenvalue);
+
+    // Jika token disediakan, tambahkan header token
+    if (tokenkey && tokenvalue) {
+        myHeaders.append(tokenkey, tokenvalue);
+    }
+
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Accept", "application/json");
 
@@ -25,13 +26,14 @@ export function getJSON(target_url, tokenkey, tokenvalue, responseFunction) {
         .catch(error => console.log('error', error));
 }
 
-// function responseFunction(response) {
-//     console.log('HTTP Status:', response.status);
-//     console.log('Response Data:', response.data);
-// }
-export function postJSON(target_url, tokenkey, tokenvalue, datajson, responseFunction) {
+export function postJSON(target_url, datajson, responseFunction, tokenkey = null, tokenvalue = null) {
     var myHeaders = new Headers();
-    myHeaders.append(tokenkey, tokenvalue);
+
+    // Jika token disediakan, tambahkan header token
+    if (tokenkey && tokenvalue) {
+        myHeaders.append(tokenkey, tokenvalue);
+    }
+
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Accept", "application/json");
 
@@ -55,13 +57,14 @@ export function postJSON(target_url, tokenkey, tokenvalue, datajson, responseFun
         .catch(error => console.log('error', error));
 }
 
-// function responseFunction(response) {
-//     console.log('HTTP Status:', response.status);
-//     console.log('Response Data:', response.data);
-// }
-export function deleteJSON(target_url, tokenkey, tokenvalue, datajson, responseFunction) {
+export function deleteJSON(target_url, datajson, responseFunction, tokenkey = null, tokenvalue = null) {
     var myHeaders = new Headers();
-    myHeaders.append(tokenkey, tokenvalue);
+
+    // Jika token disediakan, tambahkan header token
+    if (tokenkey && tokenvalue) {
+        myHeaders.append(tokenkey, tokenvalue);
+    }
+
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Accept", "application/json");
 
@@ -85,13 +88,19 @@ export function deleteJSON(target_url, tokenkey, tokenvalue, datajson, responseF
         .catch(error => console.log('error', error));
 }
 
+
 // function responseFunction(response) {
 //     console.log('HTTP Status:', response.status);
 //     console.log('Response Data:', response.data);
 // }
-export function putJSON(target_url, tokenkey, tokenvalue, datajson, responseFunction) {
+export function putJSON(target_url, datajson, responseFunction, tokenkey = null, tokenvalue = null) {
     var myHeaders = new Headers();
-    myHeaders.append(tokenkey, tokenvalue);
+
+    // Jika token disediakan, tambahkan header token
+    if (tokenkey && tokenvalue) {
+        myHeaders.append(tokenkey, tokenvalue);
+    }
+
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Accept", "application/json");
 
@@ -113,39 +122,6 @@ export function putJSON(target_url, tokenkey, tokenvalue, datajson, responseFunc
             });
         })
         .catch(error => console.log('error', error));
-}
-
-export function postWithBearer(target_url,token,datajson,responseFunction){
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer "+token);
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Accept", "application/json");
-
-    var raw = JSON.stringify(datajson);
-
-    var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-    };
-
-    fetch(target_url, requestOptions)
-    .then(response => response.text())
-    .then(result => responseFunction(JSON.parse(result)))
-    .catch(error => console.log('error', error));
-}
-
-export function get(target_url,responseFunction){
-    var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-    };
-
-    fetch(target_url, requestOptions)
-    .then(response => response.text())
-    .then(result => responseFunction(JSON.parse(result)))
-    .catch(error => console.log('error', error));
 }
 
 export function insertHTML(target_url,id,runFunction){
@@ -174,23 +150,6 @@ export function getDomHTML(target_url,domFunction){
         const htmlDom = parser.parseFromString(result, "text/html");
         domFunction(htmlDom);
     })
-    .catch(error => console.log('error', error));
-}
-
-export function getWithHeader(target_url,tokenkey,tokenvalue,responseFunction) {
-    let myHeaders = new Headers();
-    myHeaders.append(tokenkey, tokenvalue);
-    myHeaders.append("Accept", "application/json");
-
-    let requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
-    };
-
-    fetch(target_url, requestOptions)
-    .then(response => response.text())
-    .then(result => responseFunction(JSON.parse(result)))
     .catch(error => console.log('error', error));
 }
 
