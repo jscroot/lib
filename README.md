@@ -14,7 +14,9 @@ if (getCookie("login")===""){
 }
 ```
 
-## cookie.js
+## Docs
+
+* [api.js](./docs/api.md)
 
 ### getCookie(cname)
 ```js
