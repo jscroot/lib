@@ -216,15 +216,14 @@ export function isJSLoaded(src) {
     return false; // JavaScript file tidak ditemukan
 }
 
-export function addJS( src ) {
-    let s = document.createElement( 'script' );
-    s.setAttribute( 'src', src );
-    document.head.appendChild( s );
+export async function addJS(src) {
+    if (!isJSLoaded(src)) { // Perbaikan: cek jika skrip belum dimuat
+        await addJSInHead(src);
+    }
 }
 
-export function addCSS( href ) {
-    let s = document.createElement( 'link' );
-    s.setAttribute( 'rel', 'stylesheet' );
-    s.setAttribute( 'href', href );
-    document.head.appendChild( s );
+export async function addCSS(href) {
+    if (!isCSSLoaded(href)) { // Perbaikan: cek jika CSS belum dimuat
+        await addCSSInHead(href);
+    }
 }
