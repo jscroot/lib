@@ -4,7 +4,7 @@ Start with calling ES Module Javascript from html file
 ```html
 <script type="module" src="index.js"></script>
 ```
-Begin javascript with import JSCroot Component
+Begin javascript with import JSCroot Component [Here](https://www.jsdelivr.com/package/gh/jscroot/lib?tab=files)
 ```js
 import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.2/cookie.js";
 import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.2/url.js";
