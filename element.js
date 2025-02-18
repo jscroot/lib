@@ -2,11 +2,19 @@ export function container(id){
     return document.getElementById(id);
 }
 
-// function actionfunctionname(event) {
-//     const nameAttribute = event.target.getAttribute("name");
-// }
-export function onClick(id,actionfunctionname){
-    document.getElementById(id).onclick = actionfunctionname;
+export function onClick(id, actionFunctionName) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener("click", (event) => actionFunctionName(event.target));
+    } else {
+        console.warn(`Elemen dengan ID "${id}" tidak ditemukan.`);
+    }
+}
+
+export function onClicks(className,actionFunctionName){
+    document.querySelectorAll("."+className).forEach(element => {
+        element.onclick = (event) => actionFunctionName(event.target);
+    });
 }
 
 export function onChange(id,actionfunctionname){
