@@ -21,6 +21,9 @@ if (getCookie("login")===""){
 * [cookie.js](./docs/cookie.md)
 * [url.js](./docs/url.md)
 * [validate.js](./docs/validate.md)
+* [mongo.js](./docs/mongo.md)
+* [useragent.js](./docs/useragent.md)
+* [websocket.js](./docs/websocket.md)
 
 ---
 
