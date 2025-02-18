@@ -7,7 +7,7 @@ This module provides a collection of JavaScript utility functions to simplify co
 Simply include the JavaScript file in your project or import the functions as an ES module:
 
 ```javascript
-import { onClick, onClicks, container, setValue, getValue, renderHTML } from './utils.js';
+import { onClick, onClicks, container, setValue, getValue, renderHTML } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.2/element.js';
 ```
 
 ## Functions and Usage

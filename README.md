@@ -6,8 +6,8 @@ Start with calling ES Module Javascript from html file
 ```
 Begin javascript with import JSCroot Component
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/cookie.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/url.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.2/cookie.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.2/url.js";
 
 if (getCookie("login")===""){
     redirect("/");
@@ -16,6 +16,7 @@ if (getCookie("login")===""){
 
 ## Docs
 
+* [element.js](./docs/element.md)
 * [api.js](./docs/api.md)
 
 ### getCookie(cname)
@@ -57,6 +58,6 @@ Using JSCroot assisted by chatGPT:
 ## Release Tag
 ```sh
 git tag                                 #check current version
-git tag v0.2.1                          #set tag version
+git tag v0.2.2                          #set tag version
 git push origin --tags                  #push tag version to repo
 ```
