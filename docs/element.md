@@ -1,50 +1,52 @@
 # Element Functions
 
-## Introduction
+* [English Version](./element-en.md)
 
-This module provides a collection of JavaScript utility functions to simplify common DOM manipulations, event handling, and dynamic content management.
+## Pendahuluan
 
-## Installation
+Modul ini menyediakan kumpulan fungsi JavaScript untuk mempermudah manipulasi DOM, penanganan event, dan pengelolaan konten dinamis.
 
-Simply include the JavaScript file in your project or import the functions as an ES module:
+## Instalasi
+
+Cukup sertakan file JavaScript dalam proyek Anda atau impor fungsi-fungsinya sebagai modul ES:
 
 ```javascript
 import { onClick, onClicks, container, setValue, getValue, renderHTML, addJS, addCSS } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.3/element.js';
 ```
 
-## Functions and Usage
+## Fungsi dan Penggunaan
 
-### DOM Selection
+### Pemilihan Elemen DOM
 
 #### `container(id)`
 
-Gets an element by its ID.
+Mengambil elemen berdasarkan ID.
 
 ```javascript
 const element = container('myElement');
 ```
 
-### Event Handling
+### Penanganan Event
 
 #### `onClick(id, actionFunction)`
 
-Adds a click event listener to an element by ID.
+Menambahkan event klik ke elemen berdasarkan ID.
 
-**Example without arguments:**
+**Contoh tanpa argumen:**
 
 ```javascript
 function handleClick() {
-    console.log("Button clicked!");
+    console.log("Tombol diklik!");
 }
 
 onClick('myButton', handleClick);
 ```
 
-**Example with arguments:**
+**Contoh dengan argumen:**
 
 ```javascript
 function handleClickWithArgs(target) {
-    console.log("Button clicked!", target.id);
+    console.log("Tombol diklik!", target.id);
 }
 
 onClick('myButton', handleClickWithArgs);
@@ -52,23 +54,23 @@ onClick('myButton', handleClickWithArgs);
 
 #### `onClicks(className, actionFunction)`
 
-Adds a click event listener to all elements with the specified class.
+Menambahkan event klik ke semua elemen dengan class tertentu.
 
-**Example without arguments:**
+**Contoh tanpa argumen:**
 
 ```javascript
 function handleMultipleClicks() {
-    console.log("An element was clicked!");
+    console.log("Sebuah elemen diklik!");
 }
 
 onClicks('myClass', handleMultipleClicks);
 ```
 
-**Example with arguments:**
+**Contoh dengan argumen:**
 
 ```javascript
 function handleMultipleClicksWithArgs(element) {
-    console.log("Clicked element:", element.className);
+    console.log("Elemen yang diklik:", element.className);
 }
 
 onClicks('myClass', handleMultipleClicksWithArgs);
@@ -76,11 +78,11 @@ onClicks('myClass', handleMultipleClicksWithArgs);
 
 #### `onChange(id, actionFunction)`
 
-Adds a change event listener to an element.
+Menambahkan event perubahan nilai ke elemen.
 
 ```javascript
 function handleChange(element) {
-    console.log("Input changed:", element.value);
+    console.log("Input berubah:", element.value);
 }
 
 onChange('myInput', handleChange);
@@ -88,29 +90,29 @@ onChange('myInput', handleChange);
 
 #### `onInput(id, actionFunction)`
 
-Adds an input event listener to an element.
+Menambahkan event input ke elemen.
 
 ```javascript
 function handleInput(element) {
-    console.log("Input value:", element.value);
+    console.log("Nilai input:", element.value);
 }
 
 onInput('myInput', handleInput);
 ```
 
-### DOM Manipulation
+### Manipulasi DOM
 
 #### `setValue(id, valueContent)`
 
-Sets the value of an input field.
+Mengatur nilai dari input field.
 
 ```javascript
-setValue('myInput', 'New Value');
+setValue('myInput', 'Nilai Baru');
 ```
 
 #### `getValue(id)`
 
-Gets the value of an input field.
+Mengambil nilai dari input field.
 
 ```javascript
 const value = getValue('myInput');
@@ -119,25 +121,25 @@ console.log(value);
 
 #### `setInner(id, content)`
 
-Sets the inner HTML of an element.
+Mengatur inner HTML dari elemen.
 
 ```javascript
-setInner('myDiv', '<p>Hello World</p>');
+setInner('myDiv', '<p>Halo Dunia</p>');
 ```
 
 #### `setInnerText(id, content)`
 
-Sets the inner text of an element.
+Mengatur inner text dari elemen.
 
 ```javascript
-setInnerText('myDiv', 'Hello World');
+setInnerText('myDiv', 'Halo Dunia');
 ```
 
-### Visibility and Styling
+### Visibilitas dan Gaya
 
 #### `show(id)`
 
-Displays an element by setting `display: block`.
+Menampilkan elemen dengan mengatur `display: block`.
 
 ```javascript
 show('myDiv');
@@ -145,31 +147,31 @@ show('myDiv');
 
 #### `hide(id)`
 
-Hides an element by setting `display: none`.
+Menyembunyikan elemen dengan mengatur `display: none`.
 
 ```javascript
 hide('myDiv');
 ```
 
-### Dynamic Content Loading
+### Pemuatan Konten Dinamis
 
 #### `renderHTML(id, urlHTML, callback = null)`
 
-Loads external HTML content into an element.
+Memuat konten HTML eksternal ke dalam elemen.
 
 ```javascript
 function afterContentLoad() {
-    console.log('Content loaded successfully');
+    console.log('Konten berhasil dimuat');
 }
 
 renderHTML('content', 'content/home.html', afterContentLoad);
 ```
 
-### Script and CSS Management
+### Pengelolaan Script dan CSS
 
 #### `addJSInHead(src)`
 
-Dynamically adds a JavaScript file to the document head.
+Menambahkan file JavaScript secara dinamis ke dalam dokumen.
 
 ```javascript
 await addJSInHead('https://example.com/script.js');
@@ -177,7 +179,7 @@ await addJSInHead('https://example.com/script.js');
 
 #### `addCSSInHead(href)`
 
-Dynamically adds a CSS file to the document head.
+Menambahkan file CSS secara dinamis ke dalam dokumen.
 
 ```javascript
 await addCSSInHead('https://example.com/styles.css');
@@ -185,27 +187,27 @@ await addCSSInHead('https://example.com/styles.css');
 
 #### `isCSSLoaded(href)`
 
-Checks if a CSS file is already loaded.
+Memeriksa apakah file CSS sudah dimuat.
 
 ```javascript
 if (isCSSLoaded('styles.css')) {
-    console.log('CSS is already loaded');
+    console.log('CSS sudah dimuat');
 }
 ```
 
 #### `isJSLoaded(src)`
 
-Checks if a JavaScript file is already loaded.
+Memeriksa apakah file JavaScript sudah dimuat.
 
 ```javascript
 if (isJSLoaded('script.js')) {
-    console.log('JS is already loaded');
+    console.log('JS sudah dimuat');
 }
 ```
 
 #### `addJS(src)`
 
-Adds a JavaScript file to the document only if it is not already loaded.
+Menambahkan file JavaScript ke dalam dokumen hanya jika belum dimuat sebelumnya.
 
 ```javascript
 await addJS('https://example.com/script.js');
@@ -213,13 +215,13 @@ await addJS('https://example.com/script.js');
 
 #### `addCSS(href)`
 
-Adds a CSS file to the document only if it is not already loaded.
+Menambahkan file CSS ke dalam dokumen hanya jika belum dimuat sebelumnya.
 
 ```javascript
 await addCSS('https://example.com/styles.css');
 ```
 
-## Conclusion
+## Kesimpulan
 
-This utility module simplifies DOM interaction and event handling, making it easier to manage dynamic web applications. Use these functions to streamline your JavaScript code!
+Modul utilitas ini menyederhanakan interaksi dengan DOM dan penanganan event, sehingga mempermudah pengelolaan aplikasi web dinamis. Gunakan fungsi-fungsi ini untuk merapikan kode JavaScript Anda!
 
