@@ -11,8 +11,8 @@ export function onClick(id, actionFunctionName) {
     }
 }
 
-export function onClicks(className,actionFunctionName){
-    document.querySelectorAll("."+className).forEach(element => {
+export function onClicks(className, actionFunctionName) {
+    Array.from(document.getElementsByClassName(className)).forEach(element => {
         element.onclick = (event) => actionFunctionName(event.target);
     });
 }
