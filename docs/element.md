@@ -11,7 +11,7 @@ Modul ini menyediakan kumpulan fungsi JavaScript untuk mempermudah manipulasi DO
 Cukup sertakan file JavaScript dalam proyek Anda atau impor fungsi-fungsinya sebagai modul ES:
 
 ```javascript
-import { onClick, onClicks, container, setValue, getValue, renderHTML, addJS, addCSS } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.5/element.js';
+import { onClick, onClicks, onChange, onChanges, onInput, onInputs, container, setValue, getValue, renderHTML, addJS, addCSS } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.6/element.js';
 ```
 
 ## Fungsi dan Penggunaan
@@ -78,7 +78,7 @@ onClicks('myClass', handleMultipleClicksWithArgs);
 
 #### `onChange(id, actionFunction)`
 
-Menambahkan event perubahan nilai ke elemen.
+Menambahkan event perubahan nilai ke elemen berdasarkan ID.
 
 ```javascript
 function handleChange(element) {
@@ -88,9 +88,21 @@ function handleChange(element) {
 onChange('myInput', handleChange);
 ```
 
+#### `onChanges(className, actionFunction)`
+
+Menambahkan event perubahan nilai ke semua elemen dengan class tertentu.
+
+```javascript
+function handleMultipleChanges(element) {
+    console.log("Input diubah:", element.value);
+}
+
+onChanges('myClass', handleMultipleChanges);
+```
+
 #### `onInput(id, actionFunction)`
 
-Menambahkan event input ke elemen.
+Menambahkan event input ke elemen berdasarkan ID.
 
 ```javascript
 function handleInput(element) {
@@ -98,6 +110,18 @@ function handleInput(element) {
 }
 
 onInput('myInput', handleInput);
+```
+
+#### `onInputs(className, actionFunction)`
+
+Menambahkan event input ke semua elemen dengan class tertentu.
+
+```javascript
+function handleMultipleInputs(element) {
+    console.log("Input berubah secara real-time:", element.value);
+}
+
+onInputs('myClass', handleMultipleInputs);
 ```
 
 ### Manipulasi DOM

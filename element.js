@@ -22,17 +22,32 @@ export function onChange(id,actionfunctionname){
     document.getElementById(id).onchange = function(event) {actionfunctionname(event.target)};
 }
 
+export function onChanges(className, actionFunctionName) {
+    let elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].onchange = function(event) {
+            actionFunctionName(event.target);
+        };
+    }
+}
+
 export function onInput(id,actionfunctionname){
     document.getElementById(id).oninput = function(event) {actionfunctionname(event.target)};
 }
 
-// initial HTML document has been completely loaded and parsed,
-// without stylesheets, images, and subframes to finish loading
+export function onInputs(className, actionFunctionName) {
+    let elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].oninput = function(event) {
+            actionFunctionName(event.target);
+        };
+    }
+}
+
 export function runAfterDOM(runFunctionEvent){
     window.addEventListener('DOMContentLoaded',(event) => {runFunctionEvent(event)});
 }
 
-//This includes after-all assets like images, scripts, and CSS files loaded.
 export function runAfterAll(runFunctionEvent){
     window.addEventListener('load', (event) => {runFunctionEvent(event)});
 }
@@ -49,12 +64,10 @@ export function getValue(id){
     return document.getElementById(id).value;
 }
 
-// Fungsi untuk mendapatkan nilai dari sebuah atribut dalam tag
 export function getAttributeValue(id,attribute) {
     return document.getElementById(id).getAttribute(attribute);
 }
 
-//get radio button value using by name not id
 export function getValueRadio(name){
     const RadioButtons = document.getElementsByName(name);
     let selectedValue;
@@ -78,7 +91,6 @@ export function getTextSelect(id){
     return sel.options[sel.selectedIndex].text;
 }
 
-//get file size in form input in KB
 export function getFileSize(id){
     let inputElement = document.getElementById(id);
     let files = inputElement.files;
@@ -140,7 +152,6 @@ export function enableInput(id) {
     Input.disabled = false;
 }
 
-//renderHTML('content', 'content/home.html', afterContentLoadedFunction);
 export function renderHTML(id, urlHTML, callback = null) {
     // Ambil elemen berdasarkan ID
     const element = document.getElementById(id);
@@ -171,10 +182,6 @@ export function renderHTML(id, urlHTML, callback = null) {
         });
 }
 
-
-//async function functionName(arg){
-//    await addScriptInHead("http...");}
-//use async await if you need load script properly
 export function addJSInHead(src) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
@@ -185,7 +192,6 @@ export function addJSInHead(src) {
     });
 }
 
-// await addCSS("http...")
 export function addCSSInHead(href) {
     return new Promise((resolve, reject) => {
         const link = document.createElement('link');
