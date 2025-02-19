@@ -11,7 +11,7 @@ Modul ini menyediakan kumpulan fungsi JavaScript untuk mempermudah manipulasi DO
 Cukup sertakan file JavaScript dalam proyek Anda atau impor fungsi-fungsinya sebagai modul ES:
 
 ```javascript
-import { onClick, onClicks, container, setValue, getValue, renderHTML, addJS, addCSS } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.4/element.js';
+import { onClick, onClicks, container, setValue, getValue, renderHTML, addJS, addCSS } from 'https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.5/element.js';
 ```
 
 ## Fungsi dan Penggunaan

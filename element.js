@@ -12,9 +12,10 @@ export function onClick(id, actionFunctionName) {
 }
 
 export function onClicks(className, actionFunctionName) {
-    Array.from(document.getElementsByClassName(className)).forEach(element => {
-        element.onclick = (event) => actionFunctionName(event.target);
-    });
+    let elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].onclick = (event) => actionFunctionName(event.target);
+    }
 }
 
 export function onChange(id,actionfunctionname){
