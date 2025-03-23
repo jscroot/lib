@@ -191,6 +191,36 @@ function afterContentLoad() {
 renderHTML('content', 'content/home.html', afterContentLoad);
 ```
 
+#### replaceTag
+
+Fungsi `replaceTag` digunakan untuk menggantikan elemen dengan ID tertentu di dalam dokumen dengan elemen dari file HTML eksternal.
+
+
+```javascript
+replaceTag('myElement', 'component.html', () => {
+    console.log('Elemen berhasil diganti!');
+});
+```
+
+Parameter
+
+- `id` (**String**) - ID dari elemen yang akan diganti.
+- `urlHTML` (**String**) - URL dari file HTML yang akan digunakan sebagai pengganti.
+- `callback` (**Function**, opsional) - Fungsi yang akan dijalankan setelah elemen berhasil diganti.
+
+Contoh Penggunaan
+
+```html
+<div id="content">Ini akan diganti</div>
+<script>
+    replaceTag('content', 'newContent.html', () => {
+        console.log('Penggantian berhasil!');
+    });
+</script>
+```
+
+Fungsi replaceTag untuk menggantikan elemen dengan ID yang diberikan dengan elemen dari file HTML eksternal
+
 ### Pengelolaan Script dan CSS
 
 #### `addJSInHead(src)`

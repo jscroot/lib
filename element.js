@@ -182,6 +182,43 @@ export function renderHTML(id, urlHTML, callback = null) {
         });
 }
 
+
+export function replaceTag(id, urlHTML, callback = null) {
+    const element = document.getElementById(id);
+
+    if (!element) {
+        console.error(`Element with ID "${id}" not found.`);
+        return;
+    }
+
+    fetch(urlHTML)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const newElement = doc.body.firstElementChild; // Ambil elemen pertama
+
+            if (newElement) {
+                element.replaceWith(newElement); // Gantikan elemen lama dengan yang baru
+            } else {
+                console.warn(`No valid element found in ${urlHTML}`);
+            }
+
+            if (callback && typeof callback === 'function') {
+                callback();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading HTML:', error);
+        });
+}
+
+
 export function addJSInHead(src) {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
