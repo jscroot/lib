@@ -5,6 +5,21 @@ export function validateUserName(input) {
     input.value = input.value.replace(/[^a-z0-9_-]/gi, ''); // Remove special characters except _ and -
 }
 
+export function validateHouseNumber(input) {
+    // Konversi ke uppercase
+    input.value = input.value.toUpperCase();
+
+    // Hapus karakter underscore (_) dan dash (-)
+    input.value = input.value.replace(/[_-]/g, '');
+
+    // (Opsional) Hapus spasi jika kamu juga ingin bersih total
+    input.value = input.value.replace(/\s+/g, '');
+
+    // (Opsional) Kalau mau hanya huruf dan angka:
+    input.value = input.value.replace(/[^A-Z0-9]/g, '');
+}
+
+
 // Fungsi validasi nomor telepon
 export function validatePhoneNumber(input) {
     // Hanya izinkan angka
