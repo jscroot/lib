@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/url
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/url](https://croot.js.org/docs/url).
+
 # Manual Penggunaan Fungsi url
 
 ## Pendahuluan

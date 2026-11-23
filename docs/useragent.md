@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/useragent
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/useragent](https://croot.js.org/docs/useragent).
+
 # isMobile()
 
 ## Deskripsi

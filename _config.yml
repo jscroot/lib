@@ -1,0 +1,5 @@
+# Dokumentasi lama dialihkan ke croot.js.org dengan jekyll-redirect-from (didukung GitHub
+# Pages). File .js tidak diubah: situs lama mungkin masih mengimpornya dari sini.
+title: JSCroot lib (sekarang CrootJS)
+plugins:
+  - jekyll-redirect-from

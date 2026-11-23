@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/cookie
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/cookie](https://croot.js.org/docs/cookie).
+
 # Dokumentasi Fungsi Cookie
 
 ## 1. setCookieWithExpireDay

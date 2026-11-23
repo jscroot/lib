@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/element/
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/element/](https://croot.js.org/docs/element/).
+
 # Element Functions
 
 * [English Version](./element-en.md)

@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/validate
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/validate](https://croot.js.org/docs/validate).
+
 # **Penggunaan Fungsi Validasi dan Format Input**  
 
 Dokumen ini menjelaskan bagaimana cara menggunakan empat fungsi JavaScript berikut:  

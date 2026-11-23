@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/api/
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/api/](https://croot.js.org/docs/api/).
+
 # API
 
 ## getJSON

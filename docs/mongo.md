@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/mongo
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/mongo](https://croot.js.org/docs/mongo).
+
 # README
 
 ## Tata Cara Penggunaan Fungsi Mongo

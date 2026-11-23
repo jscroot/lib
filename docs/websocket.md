@@ -1,3 +1,9 @@
+---
+redirect_to: https://croot.js.org/docs/websocket
+---
+
+> **Dokumentasi lama.** JSCroot sekarang CrootJS; versi terbaru halaman ini ada di [croot.js.org/docs/websocket](https://croot.js.org/docs/websocket).
+
 # WebSocket Functions
 
 ## Pendahuluan
